@@ -163,3 +163,85 @@ function even_or_odd(number) {
         return string;
       }
 
+      // KATA : Convert binary to decimal number
+      function binToDec(bin){
+        return parseInt(bin,2);
+      }
+
+      // KATA : Given an array of integers, return a new array with each value doubled.
+
+      function maps(x){
+        const arr = x.map(x=>x*2);
+        return arr;
+        }
+
+      // KATA : Square(n) Sum - Complete the square sum function so that it squares each number passed into it and then sums the results together.
+
+      function squareSum(numbers){
+        var square = numbers.map(number => number*number);
+        var callback = (acc,cur) => acc +cur;
+        var sum = square.reduce(callback);
+        return sum;
+      }
+
+      // KATA : Complete the square sum function so that it squares each number passed into it and then sums the results together.
+
+      function squareSum(numbers){
+        var square = numbers.map( number => number*number);
+        var callback = (acc,cur) => acc +cur;
+        var sum = square.reduce(callback,0);
+        return sum;
+      }
+
+      //Attention - TypeError: reduce of empty array with no initial value => https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Errors/Reduce_of_empty_array_with_no_initial_value
+
+      // KATA - Abbreviate a Two Word Name
+      //Write a function to convert a name into initials. This kata strictly takes two words with one space in between them.
+
+      function abbrevName(name){
+        var arrName = name.split(" ");
+        var firstName = arrName[0];
+        var lastName = arrName[1];
+        var initials = firstName.charAt(0).toUpperCase() + "." + lastName.charAt(0).toUpperCase();
+        return initials;
+        }
+
+            //Other solution
+            function abbrevName(name){
+              return name.split(' ').map(x => x.substr(0, 1).toUpperCase()).join('.');
+            }
+
+      // KATA : Reversed Words : Complete the solution so that it reverses all of the words within the string passed in. reverseWords("The greatest victory is that which requires no battle") should return "battle no requires which that is victory greatest The"
+
+      function reverseWords(str){
+        reverse = str.split(" ").reverse().join(" ");
+        return reverse; // reverse those words 
+      }
+
+      // KATA - Student's Final Grade : Create a function finalGrade, which calculates the final grade of a student depending on two parameters: a grade for the exam and a number of completed projects. This function should take two arguments: exam - grade for exam (from 0 to 100); projects - number of completed projects (from 0 and above); This function should return a number (final grade). There are four types of final grades:100, if a grade for the exam is more than 90 or if a number of completed projects more than 10. 90, if a grade for the exam is more than 75 and if a number of completed projects is minimum 5.75, if a grade for the exam is more than 50 and if a number of completed projects is minimum 2. 0, in other cases
+      
+      function finalGrade (exam, projects) {
+        var finGrade = 0;
+        if (exam>90 || projects>10) {
+          finGrade = 100;
+        } else if (exam>75 && exam<=90 && projects>=5 && projects<=10) {
+          finGrade = 90;   
+        } else if (exam>50 && exam<=75 && projects>=2 && projects<5) {
+           finGrade = 75;
+        } else if (exam>50 && exam<=75 && projects>=5 && projects<=10) {
+           finGrade = 75;
+        } else if (exam>50 && exam<=90 && projects>=2 && projects<5) {
+           finGrade = 75;
+        } else {
+            finGrade = 0;   
+        }
+        return finGrade;
+      }
+      
+      function finalGrade (exam, projects) {
+        if(exam > 90 || projects > 10) return 100;
+        if(exam > 75 & projects >= 5) return 90;
+        if(exam > 50 & projects >= 2) return 75;
+        return 0;
+      }
+
