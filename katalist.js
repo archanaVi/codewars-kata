@@ -1,6 +1,12 @@
 
 // Codewars Level 8 
 
+// Write a function "greet" that returns "hello world!"
+
+function greet () {
+  return "hello world!";
+}
+
 // Return Negative - Solution :
 
   function makeNegative(num) {
@@ -244,4 +250,9 @@ function even_or_odd(number) {
         if(exam > 50 & projects >= 2) return 75;
         return 0;
       }
+
+      //KATA - get character from ASCII Value - ex: get_char(65) # => 'A'
+      function getChar(c){
+        return String.fromCharCode(c);
+        }
 
